@@ -1,0 +1,6 @@
+#summary Manual
+#labels Manual
+
+= Introduction =
+
+See README.TXT :)
