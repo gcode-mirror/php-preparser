@@ -1,0 +1,25 @@
+First, you need to include the library file:
+
+    include_once('Preparser/Preparser.php');
+
+After doing this, just include other files using functions of Preparser namespace:
+
+    Preparser\include('Preparser/test.php');
+    Preparser\include_once('Preparser/test.php');
+    Preparser\require('Preparser/test.php');
+    Preparser\require_once('Preparser/test.php');
+
+I recommend you create cache (yes of course it caches!!!1111)
+
+    Preparser\setCachePath('preparserCache/');
+    
+In the other files (not in the ones which weren't included by Preparser, such as your main file with include_once('Preparser/Preparser.php')!) you can use all features which Preparser adds to PHP, such as Array Dereferencing:
+
+    echo array(1, 2, 3)[2]; // '3'
+
+As you can see in tests/dereferencing.php, you can use it with both functions and methods, static or not:
+
+    $lol->get_lol()->get_ar()[ $lol->get_lol()->get_ar()[ $lol->get_lol()->get_ar()[ $lol->get_lol()->get_ar()[ 1 ] ] ] ]
+    Lol::get_sar()[1]
+    
+Yeah, and namespaces are supported %)
