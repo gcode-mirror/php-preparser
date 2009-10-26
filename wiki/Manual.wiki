@@ -1,5 +1,5 @@
 #summary Manual
-#labels Manual
+#labels Manual,Featured
 
 = Introduction =
 
