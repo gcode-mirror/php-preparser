@@ -1,0 +1,72 @@
+== Installation ==
+
+First, you need to include the library file:
+
+    include_once('Preparser/Preparser.php');
+
+After doing this, just include other files you need using functions of Preparser namespace:
+
+    Preparser\include('Preparser/test.php');
+    Preparser\include_once('Preparser/test.php');
+    Preparser\require('Preparser/test.php');
+    Preparser\require_once('Preparser/test.php');
+    
+== Denying parsing ==
+    
+If you don't want any file to be included by Preparser, just replace "include 'file.php';" with "include_notparse 'file.php';".
+
+But, the only reason why you should do it - if your file uses any vars in the including context, e.g.:
+
+<? // file1.php
+    include('file2.php');
+    echo $hello;
+?>
+
+<? // file2.php
+    $hello = 'hi';
+?>
+
+It isn't a very cool way! Even if you want a variable to be defined in the other file, you can use return!
+
+<? // file1.php
+    $hello = include('file2.php');
+    echo $hello;
+?>
+
+<? // file2.php
+    return 'hi';
+?>    
+
+Oh, that IS cool.
+
+Don't deny parse everything except one or two files. Why do you? Preparser don't make your app slow. If you set up cache, of course.
+    
+    
+== Setting up cache ==
+    
+I recommend you to create cache (yes, of course it caches!), it will speed up your program. Your program will run at native PHP include speed then using cached files.
+
+    Preparser\setCachePath('preparserCache/');
+
+Don't forget to allow your script to create, read, write and execute files in the folder (chmod 777 or whatever).
+
+Preparser automatically recaches all modified files, so you don't need to care too much about cleaning cache.
+
+== Okay, so what can I do? ==
+    
+In the included files (but not in the ones which weren't included by Preparser, such as your main file with include_once('Preparser/Preparser.php')!) you can use all features which Preparser adds to PHP parser, such as Array Dereferencing:
+
+    echo array(1, 2, 3)[2]; // '3'
+
+As you can see in tests/dereferencing.php, you can use it with both functions and methods, static or not:
+
+    $lol->get_lol()->get_ar()[ $lol->get_lol()->get_ar()[ $lol->get_lol()->get_ar()[ $lol->get_lol()->get_ar()[ 1 ] ] ] ]
+    Lol::get_sar()[1]
+    
+Yeah, namespaces are supported too.
+
+== It's the last section in boring manuals ==
+
+Please, don't forget: Preparser may be, and is, very buggy! So don't use it in big cool projects while we're testing it. But, the author will be happy to hear from you about any bugs or feature request. You can send them on me@va1en0k.net or post at http://code.google.com/p/php-preparser/issues/list
+
+Thank you for using and testing Preparser!

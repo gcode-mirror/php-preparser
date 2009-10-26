@@ -13,16 +13,18 @@ Preparser requires PHP 5.3 or later.
 INSTALLATION
 ------------
 
-Please see INSTALL.txt.
+Please see HOWTOS.txt.
 
 QUESTIONS AND FEEDBACK
 ----------------------
 
-Online documentation can be found at http://code.google.com/p/php-preparser/wiki/Manual
+Online documentation can be found at
+
+http://code.google.com/p/php-preparser/wiki/Manual
 
 If you find code in this release behaving in an unexpected manner or
-contrary to its documented behavior, please create an issue in the Zend
-Framework issue tracker at:
+contrary to its documented behavior, please create an issue in the
+Preparser issue tracker at:
 
 http://code.google.com/p/php-preparser/issues/list
 
@@ -38,3 +40,5 @@ ACKNOWLEDGEMENTS
 Me, Valentin Golev, would like to thank all the contributors to the Preparser
 project, our corporate sponsor (r00.ru), the Zend Framework team for their
 library, which isn't necessary for Preparser, and you, the Preparser user.
+
+I'm looking forward to hear from you, my email is me@va1en0k.net ;-)
