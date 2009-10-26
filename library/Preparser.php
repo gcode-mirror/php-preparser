@@ -98,6 +98,8 @@ class Preparser {
                 if ($token[0] == T_CURLY_OPEN) $figure_braces++;
                 if ($token[0] == T_DOLLAR_OPEN_CURLY_BRACES) $figure_braces++;
                 
+                if ($token[0] == T_STRING && $token[1] == "include_noparse") $token[1] = "include";
+                
                 if ($token[0] == T_REQUIRE || $token[0] == T_INCLUDE) {
                     $was_brace = 1;
                     $addMe = 'Preparser\includePreparsed(@$this, ';
