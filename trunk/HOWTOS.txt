@@ -13,7 +13,7 @@ After doing this, just include other files you need using functions of Preparser
     
 == Denying parsing ==
     
-If you don't want any file to be included by Preparser, just replace "include 'file.php';" with "include_notparse 'file.php';".
+If you don't want any file to be included by Preparser, just replace "include 'file.php';" with "include_noparse 'file.php';".
 
 But, the only reason why you should do it - if your file uses any vars in the including context, e.g.:
 
