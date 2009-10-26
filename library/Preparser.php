@@ -10,7 +10,7 @@
  * @package    Preparser
  * @copyright  Copyright (c) 2009 Valentin Golev (http://va1en0k.net/)
  * @license    New BSD License
- * @version    $Id: calc.c 148 2006-07-28 21:30:43Z sally $
+ * @version    $Id$
  */
  
 namespace Preparser;
