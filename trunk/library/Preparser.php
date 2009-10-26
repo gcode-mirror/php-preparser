@@ -178,18 +178,18 @@ class Preparser {
                                     else if ($tok == '(')
                                         $skobs--;
                                 }
-                            } while ($skobs); // ïðîïóñòèëè ñêîáêè
+                            } while ($skobs); // Ð¿Ñ€Ð¾Ð¿ÑƒÑÑ‚Ð¸Ð»Ð¸ ÑÐºÐ¾Ð±ÐºÐ¸
                             
                             while ( $all_last_tokens[ sizeof($all_last_tokens) - 1][0] == T_WHITESPACE )
                                 array_pop($all_last_tokens);
                             
-                            // ïðîïóñêàåì èìÿ ôóíêöèè
+                            // Ð¿Ñ€Ð¾Ð¿ÑƒÑÐºÐ°ÐµÐ¼ Ð¸Ð¼Ñ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸
                             array_pop($all_last_tokens);
                             
                             while ( $all_last_tokens[ sizeof($all_last_tokens) - 1][0] == T_WHITESPACE )
                                 array_pop($all_last_tokens);
                             
-                            // òåïåðü òàì íàâåðõó -> èëè ::
+                            // Ñ‚ÐµÐ¿ÐµÑ€ÑŒ Ñ‚Ð°Ð¼ Ð½Ð°Ð²ÐµÑ€Ñ…Ñƒ -> Ð¸Ð»Ð¸ ::
                             //echo htmlspecialchars(print_r($all_last_tokens, true)); 
                             while ( $all_last_tokens[ sizeof($all_last_tokens) - 1][0] == T_OBJECT_OPERATOR ||
                                     $all_last_tokens[ sizeof($all_last_tokens) - 1][0] == T_DOUBLE_COLON ||
