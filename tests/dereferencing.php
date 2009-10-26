@@ -25,7 +25,7 @@ $arr = ret_arr();
  
 assert( ret_arr()[2] == $arr[2] );
 
-
+assert( array('a' => 1, 'b' => 2)['a'] == 1 );
 
 // Fuck da parser!
 

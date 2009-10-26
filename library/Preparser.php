@@ -84,7 +84,6 @@ class Preparser {
         
         $in_class_since = false;
         
-  //      echo '<pre>';
             
         foreach($tokens as $token) {
             if (is_array($token)) {
@@ -192,7 +191,7 @@ class Preparser {
                                 array_pop($all_last_tokens);
                             
                             // теперь там наверху -> или ::
-                            //echo htmlspecialchars(print_r($all_last_tokens, true)); 
+                            
                             while ( $all_last_tokens[ sizeof($all_last_tokens) - 1][0] == T_OBJECT_OPERATOR ||
                                     $all_last_tokens[ sizeof($all_last_tokens) - 1][0] == T_DOUBLE_COLON ||
                                     $all_last_tokens[ sizeof($all_last_tokens) - 1][0] == T_NS_SEPARATOR ) {
@@ -222,10 +221,10 @@ class Preparser {
                                     }
                                     $tok = array_pop($all_last_tokens);
                                 }
-                                //echo htmlspecialchars(print_r($all_last_tokens, true)); 
+                                
                                 $was_function = $tok[1] . $was_function;
                             }
-                            //die(":" .token_name( $all_last_tokens[ sizeof($all_last_tokens) - 1][0]));
+                            
                         }
                         
                         
@@ -258,7 +257,7 @@ class Preparser {
             
         }
         
-    //    echo htmlspecialchars($preparsedCode);
+
         
         return $preparsedCode;
     }
